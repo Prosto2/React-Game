@@ -53,9 +53,9 @@ const eslintConfig = config(
     },
     rules: {
       'no-undef': [0],
-      '@typescript-eslint/consistent-type-definitions': [2, 'type'],
+      '@typescript-eslint/consistent-type-definitions': [1, 'type'],
       '@typescript-eslint/consistent-type-imports': [
-        2,
+        1,
         {
           prefer: 'type-imports',
           fixStyle: 'separate-type-imports',
@@ -63,7 +63,7 @@ const eslintConfig = config(
         }
       ],
       'no-restricted-imports': [
-        2,
+        1,
         {
           paths: [
             {

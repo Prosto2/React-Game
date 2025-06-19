@@ -1,8 +1,11 @@
 import type { Action, ThunkAction } from '@reduxjs/toolkit';
 import { configureStore } from '@reduxjs/toolkit';
+import playgroundReduser from '../components/Playground/store/slices';
 
 export const store = configureStore({
-  reducer: {}
+  reducer: {
+    playground: playgroundReduser
+  }
 });
 
 export type RootState = ReturnType<typeof store.getState>;
