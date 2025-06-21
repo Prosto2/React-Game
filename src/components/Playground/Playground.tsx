@@ -1,9 +1,10 @@
 import type * as React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { setCurrentStep } from './store/slices.ts';
+import { setCurrentStep, setSteps } from './store/slices.ts';
 import { useEffect, useRef, useState } from 'react';
 import Controls from './components/Controls/Controls.tsx';
-import { INTERVAL_TIME } from "./constants.ts";
+import { INTERVAL_TIME } from './constants.ts';
+import RandomKeys from './components/RandomKeys';
 
 const Playground: React.FC = () => {
   const state = useAppSelector((state) => state.playground);
@@ -14,9 +15,10 @@ const Playground: React.FC = () => {
   const [isTimerActive, setIsTimerActive] = useState<boolean>(false);
 
   useEffect(() => {
-    if(isTimerActive){
+    if (isTimerActive) {
       refreshIntervalId.current = setInterval(() => {
         dispatch(setCurrentStep());
+        dispatch(setSteps());
       }, INTERVAL_TIME);
     } else {
       if (refreshIntervalId.current) {
@@ -28,7 +30,7 @@ const Playground: React.FC = () => {
       if (refreshIntervalId.current) {
         clearInterval(refreshIntervalId.current);
       }
-    }
+    };
   }, [dispatch, isTimerActive]);
 
   return (
@@ -38,6 +40,7 @@ const Playground: React.FC = () => {
         isTimerActive={isTimerActive}
         setIsTimerActive={setIsTimerActive}
       />
+      <RandomKeys isTimerActive={isTimerActive} />
     </div>
   );
 };
