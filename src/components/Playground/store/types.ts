@@ -1,5 +1,6 @@
 export type IPlaygroundStepsState = {
-  currentValue: string;
+  currentValue: string | null;
+  enteredValue: string | null;
 };
 
 export type IPlaygroundState = {

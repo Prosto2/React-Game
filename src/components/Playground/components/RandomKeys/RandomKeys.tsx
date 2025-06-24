@@ -7,7 +7,7 @@ export type IRandomKeysProps = {
   isTimerActive: boolean;
 };
 
-const RandomKeys: React.FC<IRandomKeysProps> = (props) => {
+const RandomKeys: React.FC<IRandomKeysProps> = () => {
   // const {isTimerActive} = props;
 
   const state = useAppSelector((state) => state.playground);
