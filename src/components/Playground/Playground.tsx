@@ -1,6 +1,6 @@
 import type * as React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks.ts';
-import { setCurrentStep, setSteps } from './store/slices.ts';
+import { setCurrentStep, setSteps, setUnsuccess } from './store/slices.ts';
 import { useEffect, useRef, useState } from 'react';
 import Controls from './components/Controls/Controls.tsx';
 import { INTERVAL_TIME } from './constants.ts';
@@ -18,6 +18,7 @@ const Playground: React.FC = () => {
   useEffect(() => {
     if (isTimerActive) {
       refreshIntervalId.current = setInterval(() => {
+        dispatch(setUnsuccess());
         dispatch(setCurrentStep());
         dispatch(setSteps());
       }, INTERVAL_TIME);

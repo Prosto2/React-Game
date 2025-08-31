@@ -8,4 +8,6 @@ export type IPlaygroundStepsState = {
 export type IPlaygroundState = {
   currentStep: number;
   steps: IPlaygroundStepsState[];
+  totalSuccessful: number;
+  totalUnsuccessful: number;
 };
