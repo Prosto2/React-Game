@@ -1,4 +1,5 @@
 import type * as React from 'react';
+import Button from '../../../UI/Button';
 
 export type IControlsProps = {
   isTimerActive: boolean;
@@ -9,22 +10,22 @@ const Controls: React.FC<IControlsProps> = (props) => {
   const { isTimerActive, setIsTimerActive } = props;
   return (
     <div>
-      <button
+      <Button
         onClick={() => {
           setIsTimerActive(true);
         }}
         disabled={isTimerActive}
       >
         Play
-      </button>
-      <button
+      </Button>
+      <Button
         onClick={() => {
           setIsTimerActive(false);
         }}
         disabled={!isTimerActive}
       >
         Pause
-      </button>
+      </Button>
     </div>
   );
 };
