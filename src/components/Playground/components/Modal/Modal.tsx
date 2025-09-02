@@ -1,4 +1,4 @@
-import cn from "classnames";
+import cn from 'classnames';
 import type * as React from 'react';
 
 import { Modal as MaterialModal } from '@mui/material';
@@ -8,7 +8,7 @@ import { resetStore } from '../../store/slices.ts';
 import ResultMessage from './components/ResultMessage';
 import { Button } from '../../../UI';
 
-import styles from "./Modal.module.css";
+import styles from './Modal.module.css';
 
 export interface IModalProps {
   setIsShowModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,9 +27,16 @@ const Modal: React.FC<IModalProps> = (props) => {
 
   return (
     <MaterialModal open={true} onClose={handleClose} className={styles.wrapper}>
-      <div className={cn(styles.container, isSuccessEndGame ? styles.modalSuccess : styles.modalUnsuccess)}>
+      <div
+        className={cn(
+          styles.container,
+          isSuccessEndGame ? styles.modalSuccess : styles.modalUnsuccess
+        )}
+      >
         <ResultMessage isSuccessEndGame={isSuccessEndGame} />
-        <Button onClick={handleClose} className={styles.button}>Start New Game</Button>
+        <Button onClick={handleClose} className={styles.button}>
+          Start New Game
+        </Button>
       </div>
     </MaterialModal>
   );
