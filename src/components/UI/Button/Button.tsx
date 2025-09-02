@@ -1,15 +1,27 @@
+import cn from 'classnames';
+
 import type * as React from 'react';
 
-import { Button as MaterialButton, ButtonProps as MaterialButtonProps } from '@mui/material';
+import type { ButtonProps as MaterialButtonProps } from '@mui/material';
+import { Button as MaterialButton } from '@mui/material';
 
-import styles from "./Button.module.css";
+import styles from './Button.module.css';
 
-export interface IButtonProps extends MaterialButtonProps { }
+export interface IButtonProps extends MaterialButtonProps {}
 
 const Button: React.FC<IButtonProps> = (props) => {
-  const { children } = props;
+  const { children, className = '' } = props;
 
-  return <MaterialButton variant="contained" size="small" className={styles.button} {...props}>{children}</MaterialButton>
-}
+  return (
+    <MaterialButton
+      variant='contained'
+      size='small'
+      {...props}
+      className={cn(styles.button, className)}
+    >
+      {children}
+    </MaterialButton>
+  );
+};
 
 export default Button;

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { App } from './App';
 import { store } from './app/store';
-import {StyledEngineProvider} from '@mui/material';
+import { StyledEngineProvider } from '@mui/material';
 import './index.css';
 
 const container = document.getElementById('root');
