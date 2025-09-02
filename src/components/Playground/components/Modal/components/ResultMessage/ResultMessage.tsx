@@ -1,4 +1,5 @@
 import type * as React from 'react';
+import { TypographyText } from '../../../../../UI';
 
 export type IResultMessageProps = {
   isSuccessEndGame: boolean;
@@ -8,13 +9,13 @@ const ResultMessage: React.FC<IResultMessageProps> = (props) => {
   const { isSuccessEndGame } = props;
 
   return isSuccessEndGame ? (
-    <span>
+    <TypographyText>
       Congratulations! <br /> You win!
-    </span>
+    </TypographyText>
   ) : (
-    <span>
+    <TypographyText>
       My regrets. <br /> You have lost
-    </span>
+    </TypographyText>
   );
 };
 

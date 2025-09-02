@@ -1,4 +1,5 @@
 import type * as React from 'react';
+import { TypographyText } from '../../../../../UI';
 
 export type IWelcomeText = {
   isTimerActive: boolean;
@@ -11,7 +12,7 @@ export const WelcomeText: React.FC<IWelcomeText> = (props) => {
     return <span>Loading...</span>;
   }
 
-  return <span>Press "Play" to start the game</span>;
+  return <TypographyText>Press "Play" to start the game</TypographyText>;
 };
 
 export default WelcomeText;
