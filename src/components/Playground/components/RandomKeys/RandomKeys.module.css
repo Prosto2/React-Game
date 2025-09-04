@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: var(--spacing-medium);
+  margin-bottom: var(--spacing-medium);
+}
+
+.icon {
+  display: inline-flex;
+  border: 1px solid var(--color-gray-medium);
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: var(--color-gray);
+}
