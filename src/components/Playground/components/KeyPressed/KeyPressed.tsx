@@ -6,6 +6,8 @@ import { setEnteredValue } from '../../store/slices.ts';
 import { useKeyPressedElement } from './hooks.ts';
 import { TypographyHeader, TypographyText } from '../../../UI';
 
+import styles from './KeyPressed.module.css';
+
 export type IKeyPressedProps = {
   isTimerActive: boolean;
 };
@@ -40,11 +42,15 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
   return (
     <div>
       <TypographyHeader>KeyPressed</TypographyHeader>
-      <TypographyText>
-        {' '}
-        Press the key corresponding to the key in "Random keys"
-      </TypographyText>
-      <span>{keyPressedElement}</span>
+      <div className={styles.container}>
+        <TypographyText>
+          {' '}
+          Press the key corresponding to the key in "Random keys"
+        </TypographyText>
+        <div className={styles.wrapper}>
+          <span className={styles.icon}>{keyPressedElement}</span>
+        </div>
+      </div>
     </div>
   );
 };
